@@ -1,0 +1,94 @@
+{
+    "cities" : {
+        "toronto" : {
+            "monday": {
+                "weather" : "5C",
+                "description": "slightly cloudy with a chance of meatballs"
+            },
+            "tuesday": {
+                "weather" : "3C",
+                "description": "Wow David. The weather is so nice, you should give out 100s today!"
+            },
+            "wednesday": {
+                "weather" : "0C",
+                "description": "this is where water becomes liquid"
+            },
+            "thursday": {
+                "weather" : "12C",
+                "description": "warm"
+            },
+            "friday": {
+                "weather" : "10C",
+                "description": "perfect weather for a friday, bring your coat"
+            },
+            "saturday": {
+                "weather" : "-3C",
+                "description": "snowfall"
+            },
+            "sunday": {
+                "weather" : "-3C",
+                "description": "still snowing"
+            }
+        },
+        "ottawa": {
+            "monday": {
+                "weather" : "3C",
+                "description": "raining meatballs all day"
+            },
+            "tuesday": {
+                "weather" : "8C",
+                "description": "perfect weather for a swim"
+            },
+            "wednesday": {
+                "weather" : "9C",
+                "description": "heavy rain"
+            },
+            "thursday": {
+                "weather" : "-12C",
+                "description": "light rain"
+            },
+            "friday": {
+                "weather" : "-3C",
+                "description": "ice on roads"
+            },
+            "saturday": {
+                "weather" : "3C",
+                "description": "snowfall"
+            },
+            "sunday": {
+                "weather" : "5C",
+                "description": "still snowing"
+            }
+        },
+        "montreal": {
+            "monday": {
+                "weather" : "5C",
+                "description": "slightly cloudy with a chance of pasta sauce"
+            },
+            "tuesday": {
+                "weather" : "33C",
+                "description": "feels like a desert"
+            },
+            "wednesday": {
+                "weather" : "0C",
+                "description": "don't come out of the house"
+            },
+            "thursday": {
+                "weather" : "12C",
+                "description": "wear flip-flops"
+            },
+            "friday": {
+                "weather" : "10C",
+                "description": "perfect weather for a friday, bring your coat"
+            },
+            "saturday": {
+                "weather" : "-3C",
+                "description": "snowfall"
+            },
+            "sunday": {
+                "weather" : "-3C",
+                "description": "still snowing"
+            }
+        }
+    }
+}
