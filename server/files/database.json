@@ -3,91 +3,91 @@
         "toronto" : {
             "monday": {
                 "weather" : "5C",
-                "description": "slightly cloudy with a chance of meatballs"
+                "desc": "slightly cloudy with a chance of meatballs"
             },
             "tuesday": {
                 "weather" : "3C",
-                "description": "Wow David. The weather is so nice, you should give out 100s today!"
+                "desc": "Wow David. The weather is so nice, you should give out 100s today!"
             },
             "wednesday": {
                 "weather" : "0C",
-                "description": "this is where water becomes liquid"
+                "desc": "this is where water becomes liquid"
             },
             "thursday": {
                 "weather" : "12C",
-                "description": "warm"
+                "desc": "warm"
             },
             "friday": {
                 "weather" : "10C",
-                "description": "perfect weather for a friday, bring your coat"
+                "desc": "perfect weather for a friday, bring your coat"
             },
             "saturday": {
                 "weather" : "-3C",
-                "description": "snowfall"
+                "desc": "snowfall"
             },
             "sunday": {
                 "weather" : "-3C",
-                "description": "still snowing"
+                "desc": "still snowing"
             }
         },
         "ottawa": {
             "monday": {
                 "weather" : "3C",
-                "description": "raining meatballs all day"
+                "desc": "raining meatballs all day"
             },
             "tuesday": {
                 "weather" : "8C",
-                "description": "perfect weather for a swim"
+                "desc": "perfect weather for a swim"
             },
             "wednesday": {
                 "weather" : "9C",
-                "description": "heavy rain"
+                "desc": "heavy rain"
             },
             "thursday": {
                 "weather" : "-12C",
-                "description": "light rain"
+                "desc": "light rain"
             },
             "friday": {
                 "weather" : "-3C",
-                "description": "ice on roads"
+                "desc": "ice on roads"
             },
             "saturday": {
                 "weather" : "3C",
-                "description": "snowfall"
+                "desc": "snowfall"
             },
             "sunday": {
                 "weather" : "5C",
-                "description": "still snowing"
+                "desc": "still snowing"
             }
         },
         "montreal": {
             "monday": {
                 "weather" : "5C",
-                "description": "slightly cloudy with a chance of pasta sauce"
+                "desc": "slightly cloudy with a chance of pasta sauce"
             },
             "tuesday": {
                 "weather" : "33C",
-                "description": "feels like a desert"
+                "desc": "feels like a desert"
             },
             "wednesday": {
                 "weather" : "0C",
-                "description": "don't come out of the house"
+                "desc": "don't come out of the house"
             },
             "thursday": {
                 "weather" : "12C",
-                "description": "wear flip-flops"
+                "desc": "wear flip-flops"
             },
             "friday": {
                 "weather" : "10C",
-                "description": "perfect weather for a friday, bring your coat"
+                "desc": "perfect weather for a friday, bring your coat"
             },
             "saturday": {
                 "weather" : "-3C",
-                "description": "snowfall"
+                "desc": "snowfall"
             },
             "sunday": {
                 "weather" : "-3C",
-                "description": "still snowing"
+                "desc": "still snowing"
             }
         }
     }
