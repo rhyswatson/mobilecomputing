@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     public void performApiCall(final ListView thisList) {
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url ="http://10.11.190.213:1337/api/cities";
+        String url ="https://tranquil-stream-02820.herokuapp.com/api/cities";
 
         JsonObjectRequest objRequest = new JsonObjectRequest
             (Request.Method.GET, url, new Response.Listener<JSONObject>() {
