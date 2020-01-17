@@ -1,8 +1,11 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -25,28 +28,15 @@ import java.util.Iterator;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String URL = "http://www.example.com/abc";
-    private ArrayList<String> weatherList;
+    ListLib lib;
 
-    /*
-    excract contents from the JSON file for a days worth of weather info
-    put it into the list
-     */
-    public void populateListItem(JSONObject daysWeather, String city) {
-        try {
-            weatherList.add(city + ": " + daysWeather.getString("weather") + " - " + daysWeather.getString("desc"));
-        } catch (org.json.JSONException e) {
-            System.out.println("JSONException");
-        }
-
+    public void queryCity(String city) {
+        Intent myIntent = new Intent(this, CityActivity.class);
+        myIntent.putExtra("EXTRA_city", city); //Optional parameters
+        this.startActivity(myIntent);
     }
 
-    public void populateList(ListView thisList) {
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, this.weatherList);
-        thisList.setAdapter(arrayAdapter);
-    }
-
-    public void performApiCall(final ListView thisList) {
+    public void performApiCall() {
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
         String url ="https://mobile-computing-weather-app.herokuapp.com/api/cities";
@@ -55,13 +45,13 @@ public class MainActivity extends AppCompatActivity {
             (Request.Method.GET, url, new Response.Listener<JSONObject>() {
                 public void onResponse(JSONObject response) {
                     try {
-                        JSONObject torontoWeather = response.getJSONObject("toronto");
-                        Iterator<String> it = torontoWeather.keys();
+                        //JSONObject torontoWeather = response.getJSONObject("toronto");
+                        Iterator<String> it = response.keys();
                         while (it.hasNext()) {
-                            String day = it.next();
-                            populateListItem(torontoWeather.getJSONObject(day), "Toronto");
+                            String city = it.next();
+                            lib.populateListItem(response.getJSONObject(city), city);
                         }
-                        populateList(thisList);
+                        lib.populateList(getApplicationContext());
                     } catch (JSONException e) {
                         System.err.println(e);
                     }
@@ -81,13 +71,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final ListView thisList = (ListView)findViewById(R.id.list);
-        this.weatherList = new ArrayList<>();
-        performApiCall(thisList);
-        //System.out.println(weatherList);
-        //ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, this.weatherList);
+        lib = new ListLib((ListView)findViewById(R.id.list));
+        performApiCall();
 
-        //thisList.setAdapter(arrayAdapter);
-        //setContentView(thisList);
+        //setting an onclick event for our list items
+        lib.getListView().setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String item = adapterView.getItemAtPosition(i).toString();
+                queryCity(item);
+            }
+        });
     }
 }
