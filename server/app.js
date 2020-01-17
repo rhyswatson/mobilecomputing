@@ -7,11 +7,11 @@ const port = 1337;
 let database = undefined;
 
 app.get('/api/cities', (req, res) => {
-    let result = [];
+    let result = {};
     /* loop through all cities */
     for (city in database['cities'])
-        result.push({'toronto' : database['cities'][city]});
-
+        result[city] = database['cities'][city];
+    console.log('hit end point');
     return res.status(200).send(result);
 });
 
