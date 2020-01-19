@@ -23,8 +23,8 @@ public class ListLib {
         return this.listView;
     }
 
-    public void populateListItem(JSONObject cityObject, String city) {
-        arrayList.add(city);
+    public void populateListItem(String string) {
+        arrayList.add(string);
     }
 
     public void populateList(Context context) {

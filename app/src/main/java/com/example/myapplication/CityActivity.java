@@ -42,7 +42,7 @@ public class CityActivity extends AppCompatActivity {
 
                             while (it.hasNext()) {
                                 String day = it.next();
-                                lib.populateListItem(weatherDays.getJSONObject(day), day);
+                                lib.populateListItem(day);
                             }
                             lib.populateList(getApplicationContext());
                         } catch (JSONException e) {

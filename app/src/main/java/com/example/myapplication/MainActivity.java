@@ -44,17 +44,13 @@ public class MainActivity extends AppCompatActivity {
         JsonObjectRequest objRequest = new JsonObjectRequest
             (Request.Method.GET, url, new Response.Listener<JSONObject>() {
                 public void onResponse(JSONObject response) {
-                    try {
-                        //JSONObject torontoWeather = response.getJSONObject("toronto");
-                        Iterator<String> it = response.keys();
-                        while (it.hasNext()) {
-                            String city = it.next();
-                            lib.populateListItem(response.getJSONObject(city), city);
-                        }
-                        lib.populateList(getApplicationContext());
-                    } catch (JSONException e) {
-                        System.err.println(e);
+
+                    Iterator<String> it = response.keys();
+                    while (it.hasNext()) {
+                        String city = it.next();
+                        lib.populateListItem(city);
                     }
+                    lib.populateList(getApplicationContext());
                 }
             }, new Response.ErrorListener() {
                 public void onErrorResponse(VolleyError error) {
