@@ -27,30 +27,13 @@ public class DayActivity extends AppCompatActivity {
 
     public void performApiCall() {
         // Instantiate the RequestQueue.
-        RequestQueue queue = Volley.newRequestQueue(this);
         String url ="https://mobile-computing-weather-app.herokuapp.com/api/cities/" + city + "/" + day;
 
-        JsonObjectRequest objRequest = new JsonObjectRequest
-                (Request.Method.GET, url, new Response.Listener<JSONObject>() {
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONObject weatherObj = response.getJSONObject(city);
-                            String weather = (String)weatherObj.get("weather");
-                            String description = (String)weatherObj.get("desc");
-                            lib.populateListItem(weather + " : " + description);
-                            lib.populateList(getApplicationContext());
-                        } catch (JSONException e) {
-                            System.err.println(e);
-                        }
-                    }
-                }, new Response.ErrorListener() {
-                    public void onErrorResponse(VolleyError error) {
-                        System.err.println(error);
-                    }
-                });
+        lib.populateListItem("weather" + " : " + "desc");
+        lib.populateList(getApplicationContext());
 
         // Add the request to the RequestQueue.
-        queue.add(objRequest);
+
     }
 
     @Override
